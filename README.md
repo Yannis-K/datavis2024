@@ -1,17 +1,27 @@
-# datavis2024
+# Visualisation des données
 
-Ce repertoire contient les graphes de l'exo 2 du 16/01
+Ce projet fait partie du module Visualisation des données.
 
-le sujet porte sur les prix nobel
+## Auteur
+- KACI Yanis
+- NGUYEN Tuan Hung
+- HE Laurent
+- EZZAARI Walid
+- CHERFA Imane
 
-avec les membres suivant : 
+## Exo 2 - 16/01/2024
+- Lien pour les graphes de l'exo 2 du 16/01 : https://yannis-k.github.io/datavis2024/brouillons.html
 
-Walid 
-Imane
-Laurent 
-Tuan Hung 
-Yannis
+## Sujet : Prix Nobel
 
-lien pour le rendu du 16/01 : 
+### Problématique
+...
 
-https://yannis-k.github.io/datavis2024/brouillons.html
+### Jeu de données
+...
+
+### Les colonnes 
+...
+
+### Lien Github Page : 
+https://yannis-k.github.io/datavis2024/

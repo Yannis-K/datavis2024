@@ -11,3 +11,7 @@ Imane
 Laurent 
 Tuan Hung 
 Yannis
+
+lien pour le rendu du 16/01 : 
+
+https://yannis-k.github.io/datavis2024/brouillons.html

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brouillons-Exo2</title>
+    <style>
+      body {
+        font-family: "Rubik", Arial, Helvetica, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="visCarte">
+      <h3>Visualisation Image</h3>
+      <h4>Analyse macro</h4>
+      <img src="barcode.png"/>
+      <div style="display: flex; justify-content: center">
+        <iframe
+          style="width: 90vw; height: 60vh; border: none"
+          src="https://query.wikidata.org/embed.html#SELECT%20%3Fcity%20%3FcityLabel%20%3Ffemale_population%20%3Fcoordinate_location%20WHERE%20%7B%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%20%20%3Fcity%20wdt%3AP31%20wd%3AQ515.%0A%20%20OPTIONAL%20%7B%20%3Fcity%20wdt%3AP1539%20%3Ffemale_population.%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fcity%20wdt%3AP625%20%3Fcoordinate_location.%20%7D%0A%20%20FILTER(EXISTS%20%7B%20%3Fcity%20wdt%3AP1539%20_%3Ab0.%20%7D)%0A%7D%0ALIMIT%20100"
+          referrerpolicy="origin"
+          sandbox="allow-scripts allow-same-origin allow-popups"
+        ></iframe>
+      </div>
+
+      <h4>Chart JS</h4>
+      
+    </div>
+  </body>
+</html>

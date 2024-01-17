@@ -6,19 +6,47 @@
     <title>Dataviz 2024</title>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/vis@4.21.0/dist/vis.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/vis@4.21.0/dist/vis.js"></script>
   </head>
   <body>
     <h1>Prix nobels</h1>
     <div class="">
-      <h4>Analyse images : colorimétrie</h4>
-
+      <h2>Timeline : les prix & lauréats</h2>
+      <div id="timeline"></div>
+    </div>
+    <div class="">
+      <h2>Analyse images : colorimétrie</h2>
       <img src="assets/img/barcode.png" />
     </div>
   </body>
 </html>
 
 <script type="module">
-  import { DATA } from "./script/const.js";
+  import { DATA, CURRENT_YEAR } from "./script/const.js";
+  import { getTimelineData } from "./script/modules/timeline.js";
 
-  console.log(DATA);
+  console.log("***DATA", DATA);
+  const TIMELINE_DATA = getTimelineData(DATA);
+
+  //
+  console.log(TIMELINE_DATA);
+
+  const timelineOptions = {
+    start: new Date(1900, 1, 1),
+    end: new Date(CURRENT_YEAR, 11, 31),
+    orientation: {
+      axis: "top", // Mettre les dates en haut de la visualisation
+    },
+  };
+  // Initialize timeline
+  var timeline = new vis.Timeline(
+    document.getElementById("timeline"),
+    TIMELINE_DATA,
+    timelineOptions
+  );
 </script>

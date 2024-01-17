@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vis.js Timeline Chart</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/vis@4.21.0/dist/vis.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/vis@4.21.0/dist/vis.js"></script>
+  </head>
+  <body>
+    <!-- Your timeline will be rendered here -->
+    <div id="timeline"></div>
+
+    <!-- Your timeline data and configuration will be added here -->
+    <script>
+      // Timeline data with images
+      var timelineData = new vis.DataSet([
+        {
+          id: 1,
+          content: '<img src="image1.jpg" alt="Image 1">',
+          start: "2024-01-17",
+        },
+        {
+          id: 2,
+          content: '<img src="image2.jpg" alt="Image 2">',
+          start: "2024-01-18",
+          end: "2024-01-20",
+        },
+        // Add more events with images as needed
+      ]);
+
+      // Timeline options
+      var timelineOptions = {
+        // Options go here
+      };
+
+      // Initialize timeline
+      var timeline = new vis.Timeline(
+        document.getElementById("timeline"),
+        timelineData,
+        timelineOptions
+      );
+    </script>
+  </body>
+</html>

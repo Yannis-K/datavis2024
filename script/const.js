@@ -9,4 +9,13 @@ const DATA =
 
 const CURRENT_YEAR = new Date().getFullYear();
 
-export { DATA, CURRENT_YEAR };
+const CATEGORIES = [
+  "Chemistry",
+  "Economics",
+  "Literature",
+  "Medicine",
+  "Peace",
+  "Physics",
+];
+
+export { DATA, CURRENT_YEAR, CATEGORIES };

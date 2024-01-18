@@ -12,8 +12,73 @@
       type="text/css"
     />
     <script src="https://cdn.jsdelivr.net/npm/vis@4.21.0/dist/vis.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"
+      integrity="sha512-JPcRR8yFa8mmCsfrw4TNte1ZvF1e3+1SdGMslZvmrzDYxS69J7J49vkFL8u6u8PlPJK+H3voElBtUCzaXj+6ig=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
-  <body></body>
+  <body>
+    <div class="filter">
+      Filtrer : <br />
+      <label for="start-year">Année de début :</label>
+      <input
+        type="number"
+        id="start-year"
+        name="start-year"
+        min="1900"
+        placeholder="Année de début"
+      />
+
+      <label for="end-year">Année de fin :</label>
+      <input
+        type="number"
+        id="end-year"
+        name="end-year"
+        min="1900"
+        placeholder="Année de fin"
+      />
+
+      <button id="filterButton">Appliquer le filtre</button>
+    </div>
+    <hr />
+    <div class="">
+      <canvas id="myPieChart" height="250" width="250"></canvas>
+    </div>
+  </body>
 </html>
 
-<script type="module"></script>
+<script type="module">
+  import { DATA } from "./script/const.js";
+  import { getPieChartData, renderPieChart } from "./script/modules/pie.js";
+  import { applyFilter } from "./script/modules/data.js";
+
+  console.log(DATA);
+
+  let pieChart;
+  let pieData;
+
+  pieData = getPieChartData(DATA);
+  pieChart = renderPieChart(pieData, "myPieChart");
+
+  var filterButton = document.getElementById("filterButton");
+
+  filterButton.addEventListener("click", triggerFilterButton);
+
+  function triggerFilterButton() {
+    let filteredData = applyFilter();
+    console.log("filteredData", filteredData);
+
+    // Destroy the existing chart before creating a new one
+    if (pieChart && filteredData) {
+      pieChart.destroy();
+
+      // TODO : MAJ charts
+      let pieData = getPieChartData(filteredData);
+      pieChart = renderPieChart(pieData, "myPieChart");
+    }
+  }
+</script>

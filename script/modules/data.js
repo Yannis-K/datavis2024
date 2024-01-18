@@ -1,3 +1,5 @@
+import { DATA } from "../const.js";
+
 export function getAllDataFromCSV(csvFilePath) {
   return axios
     .get(csvFilePath)
@@ -44,4 +46,49 @@ export function getAllDataFromCSV(csvFilePath) {
       console.error("Error fetching or parsing CSV data:", error);
       throw error; // Rethrow the error for further handling if needed
     });
+}
+
+export function getFilteredData(dataBefore, beginYear, endYear) {
+  // Convertir les années de début et de fin en nombres
+  const startYear = parseInt(beginYear, 10);
+  const finishYear = parseInt(endYear, 10);
+
+  // Valider les années d'entrée
+  if (isNaN(startYear) || isNaN(finishYear) || startYear > finishYear) {
+    console.error(
+      "Années d'entrée non valides. Veuillez fournir des années valides."
+    );
+    return false;
+  }
+
+  // Filtrer les données en fonction de la plage d'années spécifiée
+  const filteredData = dataBefore.filter((item) => {
+    const itemYear = parseInt(item.year, 10);
+
+    // Filtrer les éléments dans la plage d'années spécifiée
+    return itemYear >= startYear && itemYear <= finishYear;
+  });
+
+  return filteredData;
+}
+
+// TODO : filter
+export function applyFilter() {
+  const startYear = document.getElementById("start-year").value;
+  const endYear = document.getElementById("end-year").value;
+
+  if (!startYear || !endYear) {
+    alert("Veuillez remplir les deux champs de date.");
+    return;
+  }
+
+  if (parseInt(endYear) < parseInt(startYear)) {
+    alert("La date de fin doit être supérieure ou égale à la date de début.");
+    return;
+  }
+
+  const filteredData = getFilteredData(DATA, startYear, endYear);
+  //console.log(filteredData);
+
+  return filteredData;
 }

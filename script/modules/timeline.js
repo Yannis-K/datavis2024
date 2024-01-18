@@ -11,7 +11,7 @@ export function getTimelineData(data) {
     const timelineItem = {
       id: uniqueId,
       //content: `${laureate.full_name} - ${laureate.prize}`,
-      content: `<div><img src="${laureate.image}" alt="${laureate.full_name}" style="max-width: 100px; max-height: 100px;">${laureate.full_name} - ${laureate.prize}</div>`,
+      content: `<div><img src="${laureate.imageUrl}" alt="${laureate.full_name}" style="max-width: 100px; max-height: 100px;">${laureate.full_name} - ${laureate.prize}</div>`,
 
       //start: laureate.birth_date,
       start: laureate.year,

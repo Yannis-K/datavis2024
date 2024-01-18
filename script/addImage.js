@@ -3,7 +3,6 @@ import csvParser from "csv-parser";
 import _ from "lodash";
 import createCsvWriter from "csv-writer";
 import axios from "axios";
-import { count } from "console";
 
 const getImageNobel = async (author) => {
   try {

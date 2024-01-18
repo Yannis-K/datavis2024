@@ -7,7 +7,7 @@ export function getAllDataFromCSV(csvFilePath) {
       const rows = csvData.split("\n");
       const header = rows[0].split(",");
 
-      //console.log("***HEADER", header);
+      // console.log("***HEADER", header);
 
       let counter = 0;
 

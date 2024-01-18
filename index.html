@@ -48,21 +48,49 @@
     <div class="">
       <canvas id="myPieChart" height="250" width="250"></canvas>
     </div>
+    <h2>Timeline : les lauréats</h2>
+    <div
+      style="height: 400px; overflow: scroll; margin: 24px"
+      id="timeline"
+    ></div>
   </body>
 </html>
 
 <script type="module">
-  import { DATA } from "./script/const.js";
+  import { DATA, CURRENT_YEAR } from "./script/const.js";
   import { getPieChartData, renderPieChart } from "./script/modules/pie.js";
   import { applyFilter } from "./script/modules/data.js";
+  import {
+    getTimelineData,
+    getTimelineData2,
+  } from "./script/modules/timeline.js";
 
   console.log(DATA);
 
   let pieChart;
   let pieData;
 
+  let timelineData;
+
   pieData = getPieChartData(DATA);
   pieChart = renderPieChart(pieData, "myPieChart");
+
+  //timelineData = getTimelineData(DATA);
+  timelineData = getTimelineData2(DATA);
+
+  const timelineOptions = {
+    start: new Date(1900, 1, 1),
+    end: new Date(CURRENT_YEAR, 11, 31),
+    orientation: {
+      axis: "top", // Mettre les dates en haut de la visualisation
+    },
+  };
+  // Initialize timeline
+  var timeline = new vis.Timeline(
+    document.getElementById("timeline"),
+    timelineData,
+    timelineOptions
+  );
 
   var filterButton = document.getElementById("filterButton");
 
@@ -77,8 +105,24 @@
       pieChart.destroy();
 
       // TODO : MAJ charts
+
+      /*
+       * PIE
+       */
       let pieData = getPieChartData(filteredData);
       pieChart = renderPieChart(pieData, "myPieChart");
+
+      /*
+       * TIMELINE
+       */
+      // Get updated timeline data based on the filtered data
+      let updatedTimelineData = getTimelineData(filteredData);
+
+      // Update the existing timeline with the new data
+      timeline.setItems(updatedTimelineData);
+
+      // Redraw the timeline
+      timeline.redraw();
     }
   }
 </script>

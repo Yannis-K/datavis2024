@@ -330,18 +330,18 @@ function App() {
         </div>
         <div>
           {Object.keys(pieData).length > 0 && (
-            <div style={{ display: "flex" }}>
-              <div style={{ width: "50%" }}>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <div style={{ width: "40%" }}>
                 <Pie data={pieData} />
               </div>
               <div style={{ width: "50%" }}>
                 <ReactWordcloud
                   words={wordCloudData}
-                  maxWords={20}
+                  maxWords={30}
                   options={{
                     enableTooltip: true,
                     deterministic: false,
-                    fontSizes: [20, 50],
+                    fontSizes: [20, 60],
                     fontStyle: "normal",
                     fontWeight: "normal",
                     padding: 1,

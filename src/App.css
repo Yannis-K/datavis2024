@@ -1,38 +1,81 @@
-.App {
-  text-align: center;
+.Block {
+  /* min-height: 841.5pt; */
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.BlockTitle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 18px;
+  padding: 8px;
+  background-color: #124376;
+  color: #ffffff;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.BlockTitle span {
+  margin: 0;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  line-height: 1;
+  letter-spacing: 0.0075em;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-transform: uppercase;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.mapSearch {
+  display: flex;
+  padding-top: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.map {
+  flex: 2;
+  padding: 8px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.Side {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+ul {
+  list-style: none;
+  padding-inline-start: 0;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Side .BuildingDataItem {
+  height: 40px;
+  box-sizing: border-box;
+  padding: 0 10px;
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  background-color: #f6f6f6;
+}
+.BuildingDataLabel {
+  flex: 1;
+  text-align: left;
+  font-weight: bold;
+}
+.BuildingDataValue {
+  margin-left: 5px;
+}
+.blocModalDatePickerRange {
+  display: flex;
+  align-items: center;
+  padding: 10px;
 }

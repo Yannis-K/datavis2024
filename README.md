@@ -12,6 +12,9 @@ Ce projet fait partie du module Visualisation des données.
 ## Exo 2 - 16/01/2024
 - Lien pour les graphes de l'exo 2 du 16/01 : https://yannis-k.github.io/datavis2024/brouillons.html
 
+## Exo 3 - 17/01/2024
+- Lien pour les graphes de l'exo 3 du 17/01 : https://yannis-k.github.io/datavis2024/exo.html
+
 ## Sujet : Prix Nobel
 
 ### Problématique

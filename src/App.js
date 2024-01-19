@@ -247,6 +247,9 @@ function App() {
 
   return (
     <div className="App">
+      <div class="container">
+        <h2>Visualisation des données - Les prix Nobels</h2>
+      </div>
       <div className="Block">
         <div className="BlockTitle">
           <span>informations générales</span>

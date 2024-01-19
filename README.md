@@ -24,4 +24,4 @@ https://www.kaggle.com/code/muhammadahmed68/visualizing-nobel-prize-winners-1901
 year, category, prize, motivation, laureate_type, full_name, birth_country, sex
 
 ### Lien Vercel pour le déployement : 
-[https://yannis-k.github.io/datavis2024/](https://datavis2024-nobelprize-thyp.vercel.app/)https://datavis2024-nobelprize-thyp.vercel.app/
+https://datavis2024-nobelprize-thyp.vercel.app/

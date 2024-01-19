@@ -138,11 +138,12 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const newData = filteredData.filter(
+    const newData = data.filter(
       (nobel) =>
         nobel.year >= selectedStartDate.getFullYear() &&
         nobel.year <= selectedEndDate.getFullYear()
     );
+
     setFilteredData(newData);
   }, [selectedStartDate, selectedEndDate]);
 

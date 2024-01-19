@@ -13,15 +13,15 @@ Ce projet fait partie du module Visualisation des données.
 - Lien pour les graphes de l'exo 2 du 16/01 : https://yannis-k.github.io/datavis2024/brouillons.html
 
 ## Sujet : Prix Nobel
-https://datavis2024-nobelprize-thyp.vercel.app/
+
 ### Problématique
-...
+Mettre en avant les prix Nobels
 
 ### Jeu de données
-...
+https://www.kaggle.com/code/muhammadahmed68/visualizing-nobel-prize-winners-1901-2016/input
 
 ### Les colonnes 
-...
+year, category, prize, motivation, laureate_type, full_name, birth_country, sex
 
-### Lien Github Page : 
-https://yannis-k.github.io/datavis2024/
+### Lien Vercel pour le déployement : 
+[https://yannis-k.github.io/datavis2024/](https://datavis2024-nobelprize-thyp.vercel.app/)https://datavis2024-nobelprize-thyp.vercel.app/
